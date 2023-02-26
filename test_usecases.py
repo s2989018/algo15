@@ -28,7 +28,6 @@ class TestCSP(unittest.TestCase):
                 for sol_group in cell_to_groups[(row_idx, col_idx)]:
                     self.assertTrue(sol_group in result[(row_idx, col_idx)])
 
-
     def test_satisfies_sum_constraint(self):
         horizontal_groups = [[(0,0),(0,1)], [(1,0), (1,1)]]
         vertical_groups = [[(0,0), (1,0)], [(0,1), (1,1)]]

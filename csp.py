@@ -21,7 +21,6 @@ class CSP:
                             indicates what the sum must be of the elements of the given group, and max_count_element indicates
                             the maximum number of times that a number/element may occur in the given group
         """
-
         self.width = grid.shape[1]
         self.height = grid.shape[0]
         self.numbers = numbers
@@ -44,9 +43,26 @@ class CSP:
         in the __init__ function above (self.groups and self.cell_to_groups).
         """
 
-        # TODO: write this function 
+        # for row_idx in range(self.height):
+        #     for col_idx in range(self.width):
+        #         if self.grid is not None:
+        #             self.cell_to_groups[row_idx, col_idx] = self.groups
+        #         else:
+        #             self.cell_to_groups[row_idx, col_idx] = []
 
-        raise NotImplementedError()
+
+        for row_idx in range(self.height):
+            for col_idx in range(self.width):
+                x = (row_idx, col_idx)
+                for y in self.groups:
+                    if x in y:
+                        self.cell_to_groups[row_idx, col_idx] = y
+                    else:
+                        self.cell_to_groups[row_idx, col_idx] = []
+                
+                
+                
+        
 
 
     def satisfies_sum_constraint(self, group: typing.List[typing.Tuple[int,int]], sum_constraint: int) -> bool:
