@@ -56,9 +56,9 @@ class CSP:
                 x = (row_idx, col_idx)
                 for y in self.groups:
                     if x in y:
-                        self.cell_to_groups[row_idx, col_idx] = y
+                        self.cell_to_groups[x] = y
                     else:
-                        self.cell_to_groups[row_idx, col_idx] = []
+                        self.cell_to_groups[x] = []
                 
                 
                 
