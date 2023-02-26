@@ -75,10 +75,17 @@ class CSP:
         :param sum_constraint: The sum_of_elements constraint specifying that the numbers in the given group must
                                sum up to this number. This is None if there is no sum constraint for the given group. 
         """
+        sum = 0
+        for x in group:
+            sum+= x
+        if sum > sum_constraint:
+            return False
+        else:
+            return True
 
-        # TODO: write this function
 
-        raise NotImplementedError()
+
+
 
     
     def satisfies_count_constraint(self, group: typing.List[typing.Tuple[int,int]], count_constraint: int) -> bool:
