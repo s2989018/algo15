@@ -77,6 +77,7 @@ class CSP:
         """
         sum = 0
         for x in group:
+            x = self.grid[[x[0],x[1]]] # to get the value of cell-location [[x[0], x[1]]]
             sum+= x
         if sum > sum_constraint:
             return False
